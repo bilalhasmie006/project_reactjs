@@ -1,11 +1,11 @@
 export const USER_ACTION_TYPES = {
-  USERS_CART: 'user/USERS_CART',   //ye hogi array
-USERNAME:'user/USERNAME', 
-PASSWORD:'user/PASSWORD',
+  USERS_CART: 'user/USERS_CART', //ye hogi array
 
-
+  //Login
+  USER_LOGIN_START: 'user/USER_LOGIN_START',
+  USER_LOGIN_SUCCESS: 'user/USER_LOGIN_SUCCESS',
+  USER_LOGIN_FAILED: 'user/USER_LOGIN_FAILED',
 };
-
 
 // export const USER_ACTION_TYPES = {
 //   LOG_IN: 'user/LOG_IN',

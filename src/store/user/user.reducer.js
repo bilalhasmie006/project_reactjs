@@ -2,74 +2,43 @@ import { userscart } from './user.action';
 import { USER_ACTION_TYPES } from './user.types';
 
 const INITIAL_STATE = {
-  user: '',
-  password: '',
+  user: null,
   error: false,
-
+  message: false,
+  loading: false,
 };
 
 export const userReducer = (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case USER_ACTION_TYPES.USERNAME:
+    case USER_ACTION_TYPES.USER_LOGIN_START:
       return {
         ...state,
-        loading=true
-if(USER_ACTION_TYPES.USERNAME  === userData. ){
+        loading: true,
+      };
 
-  }  elseif(userData.password === formsejodataayega){
-    return {
-      ...state,
-      loading=false
-      login=true;
+    case USER_ACTION_TYPES.USER_LOGIN_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        message: payload.message,
+        user: payload.data,
+      };
 
-  }
-};
-    case USER_ACTION_TYPES.USERS_CART:
-      return {};
-  
+    case USER_ACTION_TYPES.USER_LOGIN_FAILED:
+      return {
+        ...state,
+        loading: false,
+        message: payload,
+        error: true,
+      };
 
-    // case COUNTER_ACTION_TYPES.SET_COUNT_START:
-    //   return {
-    //     ...state,
-    //     error: false,
-    //     loading: true,
-    //   };
-    // case COUNTER_ACTION_TYPES.SET_COUNT_SUCCESS:
-    //   return {
-    //     ...state,
-    //     loading: false,
-    //     count: payload,
-    //   };
-
-    // case COUNTER_ACTION_TYPES.SET_COUNT_FAILURE:
-    //   return {
-    //     ...state,
-    //     loading: false,
-    //     error: payload,
-    //   };
     default:
       return state;
   }
 };
 // api call for users
-
-const [userData, setuserData] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get('https://fakestoreapi.com/users')
-      .then((res) => {
-        console.log(res);
-        setuserData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
- userData[i].username=
 
 // const todoReducer = (state = INITIAL_STATE, action) => {
 //   const { type, payload } = action;
